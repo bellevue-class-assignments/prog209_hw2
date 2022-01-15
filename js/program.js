@@ -21,9 +21,9 @@ function getUserInput() {
 }
 
 function updateUserInput() {
-    for (let i = 0; i < userInput.length; i++) {
-        let newString = swapFirstAndLast(userInput[i]);
-        createListItem("#ulConverted", newString);
+    modifiedInput = userInput.map(swapFirstAndLast)
+    for (let i = 0; i < modifiedInput.length; i++) {
+        createListItem("#ulConverted", modifiedInput[i]);
     }
     startSection.style.display = "none";
     endSection.style.display = "block";
